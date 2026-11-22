@@ -38,7 +38,9 @@ re-run: the book job skips books already published, and re-making a book reuses 
 
 ### 1. A custom domain (the "domain rollout" session does this)
 
-The site reads its address from one setting, the repository variable `SITE_URL`. Moving it:
+The site reads its address from one setting, the repository variable `SITE_URL`. Use a domain or subdomain that
+serves nothing today: never point a name that already serves a site here, because that would replace it. If the apex
+is in use, take a subdomain, as Startups 101 did with `learn.startupcollege.io`. Moving it:
 
 1. DNS: for an apex domain, four `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
    `185.199.111.153`, four `AAAA` → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`,
@@ -47,6 +49,9 @@ The site reads its address from one setting, the repository variable `SITE_URL`.
 3. `gh api -X PUT repos/theguysaccount/audiobook-visual-experiences/pages -f cname=<domain>`
 4. `gh workflow run deploy.yml --repo theguysaccount/audiobook-visual-experiences` (2–4 back to back).
 5. After the certificate is issued: `gh api -X PUT repos/theguysaccount/audiobook-visual-experiences/pages -F https_enforced=true`.
+6. About 20 minutes later, send every page to IndexNow once. A new host answers 403 at first, and later deploys send
+   only changed pages:
+   `curl -s https://<domain>/sitemap.xml | grep -o '<loc>[^<]*' | sed 's/<loc>//' > urls.txt && SITE_URL=https://<domain> node scripts/indexnow.mjs --file urls.txt`
 
 Every canonical URL, the sitemap, robots.txt, embeds and asset paths move with it (a test builds for a root domain).
 Embeds already pasted on other sites keep working: GitHub redirects the old github.io URLs.
