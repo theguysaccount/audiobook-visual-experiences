@@ -33,7 +33,7 @@ npm test                               # pipeline (Python) and player/build (Nod
 node scripts/build.mjs                 # build into dist/
 node scripts/serve.mjs 4862            # http://127.0.0.1:4862/audiobook-visual-experiences/
 node scripts/selftest.mjs              # browser test of the build (or pass the live URL to include playback)
-python3 -m venv .venv && .venv/bin/pip install faster-whisper==1.2.1
+python3 -m venv .venv && .venv/bin/pip install -r requirements-align.txt
 .venv/bin/python -m pipeline.make_book --next   # make the next queued book locally
 ```
 

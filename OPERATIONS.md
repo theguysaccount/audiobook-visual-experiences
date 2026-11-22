@@ -31,7 +31,7 @@ re-run: the book job skips books already published, and re-making a book reuses 
 
 - Re-make one book: Actions → "Monthly new book" → Run workflow with `slug` (reuses transcripts; only alignment and pages change).
 - A bad deploy that passed every test: re-run the last good deploy, or `git revert` and push.
-- Locally: `python3 -m venv .venv && .venv/bin/pip install faster-whisper==1.2.1`, then
+- Locally: `python3 -m venv .venv && .venv/bin/pip install -r requirements-align.txt`, then
   `.venv/bin/python -m pipeline.make_book <slug>`, `npm test`, `node scripts/build.mjs`, `node scripts/selftest.mjs`.
 
 ## Keys Jack can turn later
