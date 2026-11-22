@@ -130,10 +130,11 @@ class MakeBookTest(unittest.TestCase):
         self.assertEqual(us_public_domain_cutoff(2027), 1931)
 
     def test_rights(self):
-        ok = "<p>This ebook is for the use of anyone anywhere in the United States</p>"
-        self.assertIsNone(check_rights({"published": 1865}, ok))
-        self.assertIn("after", check_rights({"published": 1990}, ok))
-        self.assertIn("copyrighted", check_rights({"published": 1900}, ok + " This eBook is copyrighted"))
+        pd = "Public domain in the USA."
+        self.assertIsNone(check_rights({"published": 1865}, "<p>text</p>", pd))
+        self.assertIn("after", check_rights({"published": 1990}, "<p>text</p>", pd))
+        self.assertIn("catalog record", check_rights({"published": 1900}, "<p>text</p>", "Copyrighted. Read the copyright notice"))
+        self.assertIn("copyrighted", check_rights({"published": 1900}, "<p>This eBook is copyrighted</p>", pd))
 
     def test_section_titles(self):
         self.assertEqual(section_title("01 - Proem & Down the Rabbit-hole", 1), "Proem & Down the Rabbit-hole")

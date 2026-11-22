@@ -48,9 +48,14 @@ jobs:
           key: whisper-${{ env.RA_MODEL }}-v1
       - name: Make the book (download, transcribe, align, check)
         id: make
+        env:
+          SLUG: ${{ inputs.slug }}
         run: |
-          if [ -n "${{ inputs.slug }}" ]; then python -m pipeline.make_book "${{ inputs.slug }}" --reuse-transcripts; else python -m pipeline.make_book --next --reuse-transcripts; fi
-          echo "status=$?" >> "$GITHUB_OUTPUT"
+          set +e
+          if [ -n "$SLUG" ]; then python -m pipeline.make_book "$SLUG" --reuse-transcripts; else python -m pipeline.make_book --next --reuse-transcripts; fi
+          code=$?
+          if [ "$code" = "3" ]; then echo "::warning::The book did not pass a content check and was not published; the reason is saved in data/queue.json."; exit 0; fi
+          exit $code
         continue-on-error: true
       - name: Tests on the new data
         run: npm test

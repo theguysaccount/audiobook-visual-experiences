@@ -63,6 +63,13 @@ def gutenberg_html(pg_id):
     raise RuntimeError("no HTML edition of Gutenberg #%s on the mirror" % pg_id)
 
 
+def gutenberg_rights(pg_id):
+    """The rights statement from Gutenberg's own catalog record (RDF) on the mirror, e.g. "Public domain in the USA."."""
+    rdf = fetch("%s/cache/epub/%d/pg%d.rdf" % (MIRROR, int(pg_id), int(pg_id))).decode("utf-8", errors="replace")
+    m = re.search(r"<dcterms:rights>(.*?)</dcterms:rights>", rdf, re.S)
+    return m.group(1).strip() if m else ""
+
+
 def decode_html(data):
     """Older Gutenberg HTML files are ISO-8859-1 or windows-1252; newer ones are UTF-8. Trust the file's own meta."""
     head = data[:3000].decode("ascii", errors="replace").lower()

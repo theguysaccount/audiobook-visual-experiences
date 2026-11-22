@@ -31,7 +31,7 @@ MAX_IMAGE_BYTES = 1_500_000
 
 
 def today():
-    return os.environ.get("RA_TODAY") or datetime.datetime.utcnow().strftime("%Y-%m-%d")
+    return os.environ.get("RA_TODAY") or datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
 
 
 def us_public_domain_cutoff(year=None):
@@ -63,15 +63,17 @@ def section_title(raw, n, overrides=None):
     return t or "Part %d" % n
 
 
-def check_rights(entry, raw_html):
+def check_rights(entry, raw_html, rights_statement):
+    """Publish only books first published in or before the US public-domain cutoff whose Gutenberg catalog record
+    says "Public domain in the USA", and whose edition carries no copyright marker."""
     cutoff = us_public_domain_cutoff()
     if int(entry["published"]) > cutoff:
         return "first published %s, after the US public-domain cutoff (%s)" % (entry["published"], cutoff)
-    head = raw_html[:20000].lower()
-    if "copyrighted project gutenberg" in head or "this ebook is copyrighted" in head:
+    if "public domain in the usa" not in (rights_statement or "").lower():
+        return "Gutenberg's catalog record does not say public domain in the USA (%r)" % (rights_statement or "")[:80]
+    text = raw_html.lower()
+    if "copyrighted project gutenberg" in text or "this ebook is copyrighted" in text:
         return "the Gutenberg edition is marked as copyrighted"
-    if "united states" not in head and "anyone anywhere at no cost" not in head:
-        return "the Gutenberg edition has no public-domain statement"
     return None
 
 
@@ -166,7 +168,7 @@ def make(entry, reuse=False, model_name="base.en"):
     lv = sources.librivox(entry["lv"])
     readers = sorted({r["display_name"] for s in lv["sections"] for r in s.get("readers", [])})
     base_url, raw = sources.gutenberg_html(entry["pg"])
-    problem = check_rights(entry, raw)
+    problem = check_rights(entry, raw, sources.gutenberg_rights(entry["pg"]))
     if problem:
         return {"ok": False, "reason": problem}
     blocks = parse_blocks(raw)
