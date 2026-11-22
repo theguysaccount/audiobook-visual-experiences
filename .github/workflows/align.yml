@@ -1,0 +1,99 @@
+# Monthly: publish the next book from data/queue.json. Downloads its LibriVox narration (to the runner only), runs
+# speech recognition for word timings, aligns them to the Project Gutenberg text, checks rights and alignment
+# quality, runs the tests, commits the new book's data and illustrations, then rebuilds and deploys the site.
+# Fails safe: a book that fails a check is marked in the queue with the reason and never published; a network or
+# tool failure commits nothing; the live site is unchanged either way. Safe to re-run.
+name: Monthly new book
+
+on:
+  schedule:
+    - cron: "37 5 9 * *"     # the 9th of each month, 05:37 UTC (GitHub may start it hours late)
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "A queue entry to (re)make instead of the next one"
+        required: false
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+
+concurrency:
+  group: align
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  RA_MODEL: base.en
+
+jobs:
+  book:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Speech recognition tools
+        run: pip install --quiet "faster-whisper==1.2.1"
+      - name: Cache the recognition model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-${{ env.RA_MODEL }}-v1
+      - name: Make the book (download, transcribe, align, check)
+        id: make
+        run: |
+          if [ -n "${{ inputs.slug }}" ]; then python -m pipeline.make_book "${{ inputs.slug }}" --reuse-transcripts; else python -m pipeline.make_book --next --reuse-transcripts; fi
+          echo "status=$?" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+      - name: Tests on the new data
+        run: npm test
+      - name: Build check
+        run: node scripts/build.mjs
+      - name: Commit the new book (or the reason it was skipped)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/books data/queue.json
+          if git diff --cached --quiet; then echo "Nothing new."; else
+            git commit -m "Monthly book: $(git diff --cached --name-only | grep -m1 -o 'data/books/[^/]*' | cut -d/ -f3 || echo queue update) ($(date -u +%F))"
+            git pull --rebase --quiet origin main && git push origin HEAD:main
+          fi
+      - name: Rebuild and deploy the site
+        run: gh workflow run deploy.yml --ref main
+      - name: Fail the run if the book step failed
+        if: steps.make.outcome == 'failure'
+        run: |
+          echo "::error::The book step failed (network or tool error); nothing was published. See the log above."
+          exit 1
+      - name: Close the alert issue after a good run
+        run: |
+          for n in $(gh issue list --label ops-alert --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Monthly book job passed again (run $GITHUB_RUN_ID)."
+          done
+      - name: Open or update the alert issue
+        if: failure()
+        run: |
+          gh label create ops-alert --color B60205 --description "Automated job failed" 2>/dev/null || true
+          body="The monthly book job failed (run $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID). Nothing was published; the live site is unchanged. This issue closes itself after the next good run."
+          num=$(gh issue list --label ops-alert --state open --json number --jq '.[0].number')
+          if [ -n "$num" ]; then gh issue comment "$num" --body "$body"; else gh issue create --title "Monthly book job failing" --label ops-alert --body "$body"; fi
+
+  keepalive:
+    if: always() && github.event_name == 'schedule'
+    needs: book
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - run: bash .github/scripts/keepalive.sh
+        env:
+          GH_TOKEN: ${{ github.token }}

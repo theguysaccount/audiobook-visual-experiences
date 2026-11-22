@@ -1,0 +1,13 @@
+{
+  "name": "audiobook-visual-experiences",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -t . && node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "selftest": "node scripts/selftest.mjs",
+    "serve": "node scripts/serve.mjs 4862"
+  },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,10 @@
+.venv/
+.cache/
+.logs/
+node_modules/
+dist/
+selftest-out/
+__pycache__/
+*.pyc
+.DS_Store
+*.log

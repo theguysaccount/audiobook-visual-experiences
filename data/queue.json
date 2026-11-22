@@ -1,0 +1,138 @@
+{
+ "_about": "Books to publish, in order. The monthly job publishes the first entry without data/books/<slug>/book.json and without a skip reason. lv = LibriVox audiobook id (a solo reading), pg = Project Gutenberg ebook number (an HTML edition, illustrated where possible), published = year of first publication (must be in the US public domain).",
+ "books": [
+  {
+   "slug": "alices-adventures-in-wonderland",
+   "title": "Alice's Adventures in Wonderland",
+   "author": "Lewis Carroll",
+   "published": 1865,
+   "lv": 4240,
+   "pg": 28885,
+   "illustrator": "Arthur Rackham (1907)",
+   "cover": "images/cover.jpg",
+   "blurb": "Alice follows a White Rabbit down a hole into a world of riddles, tea parties and a furious Queen."
+  },
+  {
+   "slug": "a-christmas-carol",
+   "title": "A Christmas Carol",
+   "author": "Charles Dickens",
+   "published": 1843,
+   "lv": 7314,
+   "pg": 46,
+   "illustrator": "John Leech (1843)",
+   "cover": "images/bookcover.jpg",
+   "blurb": "On Christmas Eve, the miser Ebenezer Scrooge is visited by his dead partner and three spirits.",
+   "titles": {
+    "4": "The Last of the Spirits"
+   }
+  },
+  {
+   "slug": "the-wonderful-wizard-of-oz",
+   "title": "The Wonderful Wizard of Oz",
+   "author": "L. Frank Baum",
+   "published": 1900,
+   "lv": 12181,
+   "pg": 43936,
+   "blurb": "A cyclone carries Dorothy to the land of Oz, where she sets off along the yellow brick road to find the Wizard."
+  },
+  {
+   "slug": "through-the-looking-glass",
+   "title": "Through the Looking-Glass",
+   "author": "Lewis Carroll",
+   "published": 1871,
+   "lv": 4157,
+   "pg": 12,
+   "blurb": "Alice climbs through the mirror into a land laid out like a chessboard, and sets out to become a queen."
+  },
+  {
+   "slug": "the-time-machine",
+   "title": "The Time Machine",
+   "author": "H. G. Wells",
+   "published": 1895,
+   "lv": 5630,
+   "pg": 35,
+   "blurb": "A Victorian inventor travels to the year 802,701 and finds humanity split into two strange species."
+  },
+  {
+   "slug": "the-jungle-book",
+   "title": "The Jungle Book",
+   "author": "Rudyard Kipling",
+   "published": 1894,
+   "lv": 662,
+   "pg": 236,
+   "blurb": "Mowgli is raised by wolves, taught by Baloo and Bagheera, and hunted by the tiger Shere Khan."
+  },
+  {
+   "slug": "peter-pan",
+   "title": "Peter Pan",
+   "author": "J. M. Barrie",
+   "published": 1911,
+   "lv": 11993,
+   "pg": 16,
+   "blurb": "The boy who won't grow up teaches Wendy and her brothers to fly, and takes them to Neverland."
+  },
+  {
+   "slug": "treasure-island",
+   "title": "Treasure Island",
+   "author": "Robert Louis Stevenson",
+   "published": 1883,
+   "lv": 10043,
+   "pg": 120,
+   "blurb": "Young Jim Hawkins finds a pirate's map and sails for buried treasure with the charming, dangerous Long John Silver."
+  },
+  {
+   "slug": "the-wind-in-the-willows",
+   "title": "The Wind in the Willows",
+   "author": "Kenneth Grahame",
+   "published": 1908,
+   "lv": 7304,
+   "pg": 27805,
+   "blurb": "Mole, Rat, Badger and the reckless Mr. Toad share adventures along the river and in the Wild Wood."
+  },
+  {
+   "slug": "the-secret-garden",
+   "title": "The Secret Garden",
+   "author": "Frances Hodgson Burnett",
+   "published": 1911,
+   "lv": 56,
+   "pg": 113,
+   "blurb": "Lonely Mary Lennox finds a locked garden on a Yorkshire estate and brings it, and her cousin, back to life."
+  },
+  {
+   "slug": "the-adventures-of-sherlock-holmes",
+   "title": "The Adventures of Sherlock Holmes",
+   "author": "Arthur Conan Doyle",
+   "published": 1892,
+   "lv": 4469,
+   "pg": 1661,
+   "blurb": "Twelve cases for Sherlock Holmes and Dr. Watson, from A Scandal in Bohemia to The Copper Beeches."
+  },
+  {
+   "slug": "frankenstein",
+   "title": "Frankenstein",
+   "author": "Mary Shelley",
+   "published": 1818,
+   "lv": 5668,
+   "pg": 84,
+   "blurb": "Victor Frankenstein builds a living being and abandons it, and his creation demands a reckoning."
+  },
+  {
+   "slug": "anne-of-green-gables",
+   "title": "Anne of Green Gables",
+   "author": "L. M. Montgomery",
+   "published": 1908,
+   "lv": 1168,
+   "pg": 45,
+   "blurb": "Red-haired orphan Anne Shirley talks her way into the hearts of an elderly brother and sister on Prince Edward Island."
+  },
+  {
+   "slug": "pride-and-prejudice",
+   "title": "Pride and Prejudice",
+   "author": "Jane Austen",
+   "published": 1813,
+   "lv": 4023,
+   "pg": 1342,
+   "blurb": "Elizabeth Bennet and Mr. Darcy misjudge each other, at length and with wit, in Regency England."
+  }
+ ]
+}

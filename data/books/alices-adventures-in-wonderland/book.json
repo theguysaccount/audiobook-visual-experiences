@@ -1,0 +1,124 @@
+{
+ "slug": "alices-adventures-in-wonderland",
+ "title": "Alice's Adventures in Wonderland",
+ "author": "Lewis Carroll",
+ "published": 1865,
+ "illustrator": "Arthur Rackham (1907)",
+ "blurb": "Alice follows a White Rabbit down a hole into a world of riddles, tea parties and a furious Queen.",
+ "readers": [
+  "Eric Leach"
+ ],
+ "librivox": {
+  "id": 4240,
+  "url": "https://librivox.org/alices-adventures-in-wonderland-by-lewis-carroll-5/",
+  "archive": "https://archive.org/details/alices_adventures_1005_librivox",
+  "title": "Alice's Adventures in Wonderland (version 4)"
+ },
+ "gutenberg": {
+  "id": 28885,
+  "url": "https://www.gutenberg.org/ebooks/28885"
+ },
+ "duration": 9086.5,
+ "coverage": 0.947,
+ "model": "base.en",
+ "made": "2026-11-22",
+ "sections": [
+  {
+   "n": 1,
+   "title": "Proem & Down the Rabbit-hole",
+   "slug": "1-proem-down-the-rabbit-hole",
+   "duration": 728.13,
+   "coverage": 0.879,
+   "words": 2560
+  },
+  {
+   "n": 2,
+   "title": "The Pool of Tears",
+   "slug": "2-the-pool-of-tears",
+   "duration": 606.45,
+   "coverage": 0.956,
+   "words": 2099
+  },
+  {
+   "n": 3,
+   "title": "A Caucus-race and a Long Tale",
+   "slug": "3-a-caucus-race-and-a-long-tale",
+   "duration": 593.62,
+   "coverage": 0.938,
+   "words": 1703
+  },
+  {
+   "n": 4,
+   "title": "The Rabbit sends in a Little Bill",
+   "slug": "4-the-rabbit-sends-in-a-little-bill",
+   "duration": 843.67,
+   "coverage": 0.927,
+   "words": 2626
+  },
+  {
+   "n": 5,
+   "title": "Advice from a Caterpillar",
+   "slug": "5-advice-from-a-caterpillar",
+   "duration": 772.51,
+   "coverage": 0.978,
+   "words": 2169
+  },
+  {
+   "n": 6,
+   "title": "Pig and Pepper",
+   "slug": "6-pig-and-pepper",
+   "duration": 863.92,
+   "coverage": 0.963,
+   "words": 2623
+  },
+  {
+   "n": 7,
+   "title": "A Mad Tea-party",
+   "slug": "7-a-mad-tea-party",
+   "duration": 836.79,
+   "coverage": 0.959,
+   "words": 2283
+  },
+  {
+   "n": 8,
+   "title": "The Queen's Croquet-ground",
+   "slug": "8-the-queens-croquet-ground",
+   "duration": 826.76,
+   "coverage": 0.967,
+   "words": 2503
+  },
+  {
+   "n": 9,
+   "title": "The Mock Turtle's Story",
+   "slug": "9-the-mock-turtles-story",
+   "duration": 839.02,
+   "coverage": 0.939,
+   "words": 2367
+  },
+  {
+   "n": 10,
+   "title": "The Lobster Quadrille",
+   "slug": "10-the-lobster-quadrille",
+   "duration": 811.33,
+   "coverage": 0.947,
+   "words": 2003
+  },
+  {
+   "n": 11,
+   "title": "Who Stole the Tarts?",
+   "slug": "11-who-stole-the-tarts",
+   "duration": 636.73,
+   "coverage": 0.965,
+   "words": 1863
+  },
+  {
+   "n": 12,
+   "title": "Alice's Evidence",
+   "slug": "12-alices-evidence",
+   "duration": 727.55,
+   "coverage": 0.949,
+   "words": 2173
+  }
+ ],
+ "cover": "img/cover.jpg"
+}

@@ -1,0 +1,68 @@
+{
+ "slug": "a-christmas-carol",
+ "title": "A Christmas Carol",
+ "author": "Charles Dickens",
+ "published": 1843,
+ "illustrator": "John Leech (1843)",
+ "blurb": "On Christmas Eve, the miser Ebenezer Scrooge is visited by his dead partner and three spirits.",
+ "readers": [
+  "Kara Shallenberg (1969-2023)"
+ ],
+ "librivox": {
+  "id": 7314,
+  "url": "https://librivox.org/a-christmas-carol-version-6-by-charles-dickens/",
+  "archive": "https://archive.org/details/christmas_carol_1212_librivox",
+  "title": "Christmas Carol (version 06)"
+ },
+ "gutenberg": {
+  "id": 46,
+  "url": "https://www.gutenberg.org/ebooks/46"
+ },
+ "duration": 11322.0,
+ "coverage": 0.961,
+ "model": "base.en",
+ "made": "2026-11-22",
+ "sections": [
+  {
+   "n": 1,
+   "title": "Marley's Ghost",
+   "slug": "1-marleys-ghost",
+   "duration": 2636.72,
+   "coverage": 0.942,
+   "words": 6510
+  },
+  {
+   "n": 2,
+   "title": "The First of the Three Spirits",
+   "slug": "2-the-first-of-the-three-spirits",
+   "duration": 2468.55,
+   "coverage": 0.972,
+   "words": 6297
+  },
+  {
+   "n": 3,
+   "title": "The Second of the Three Spirits",
+   "slug": "3-the-second-of-the-three-spirits",
+   "duration": 3204.94,
+   "coverage": 0.965,
+   "words": 8197
+  },
+  {
+   "n": 4,
+   "title": "The Last of the Spirits",
+   "slug": "4-the-last-of-the-spirits",
+   "duration": 2093.58,
+   "coverage": 0.958,
+   "words": 5390
+  },
+  {
+   "n": 5,
+   "title": "The End of It",
+   "slug": "5-the-end-of-it",
+   "duration": 918.2,
+   "coverage": 0.968,
+   "words": 2259
+  }
+ ],
+ "cover": "img/bookcover.jpg"
+}
