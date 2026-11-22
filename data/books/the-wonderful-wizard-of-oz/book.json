@@ -1,0 +1,220 @@
+{
+ "slug": "the-wonderful-wizard-of-oz",
+ "title": "The Wonderful Wizard of Oz",
+ "author": "L. Frank Baum",
+ "published": 1900,
+ "illustrator": null,
+ "blurb": "A cyclone carries Dorothy to the land of Oz, where she sets off along the yellow brick road to find the Wizard.",
+ "readers": [
+  "Lyn Stanley"
+ ],
+ "librivox": {
+  "id": 12181,
+  "url": "https://librivox.org/the-wonderful-wizard-of-oz-version-7-by-l-frank-baum/",
+  "archive": "https://archive.org/details/wizardofoz_1712_librivox",
+  "title": "Wonderful Wizard of Oz (version 7)"
+ },
+ "gutenberg": {
+  "id": 43936,
+  "url": "https://www.gutenberg.org/ebooks/43936"
+ },
+ "duration": 13777.2,
+ "coverage": 0.94,
+ "model": "base.en",
+ "made": "2026-11-22",
+ "sections": [
+  {
+   "n": 1,
+   "title": "The Cyclone",
+   "slug": "1-the-cyclone",
+   "duration": 487.06,
+   "coverage": 0.832,
+   "words": 1463
+  },
+  {
+   "n": 2,
+   "title": "The Council with the Munchkins",
+   "slug": "2-the-council-with-the-munchkins",
+   "duration": 691.47,
+   "coverage": 0.941,
+   "words": 2000
+  },
+  {
+   "n": 3,
+   "title": "How Dorothy Saved the Scarecrow",
+   "slug": "3-how-dorothy-saved-the-scarecrow",
+   "duration": 657.17,
+   "coverage": 0.95,
+   "words": 1960
+  },
+  {
+   "n": 4,
+   "title": "The Road Through the Forest",
+   "slug": "4-the-road-through-the-forest",
+   "duration": 528.54,
+   "coverage": 0.941,
+   "words": 1435
+  },
+  {
+   "n": 5,
+   "title": "The Rescue of the Tin Woodman",
+   "slug": "5-the-rescue-of-the-tin-woodman",
+   "duration": 694.74,
+   "coverage": 0.95,
+   "words": 2057
+  },
+  {
+   "n": 6,
+   "title": "The Cowardly Lion",
+   "slug": "6-the-cowardly-lion",
+   "duration": 551.32,
+   "coverage": 0.95,
+   "words": 1494
+  },
+  {
+   "n": 7,
+   "title": "The Journey to the Great Oz",
+   "slug": "7-the-journey-to-the-great-oz",
+   "duration": 646.97,
+   "coverage": 0.957,
+   "words": 1829
+  },
+  {
+   "n": 8,
+   "title": "The Deadly Poppy Field",
+   "slug": "8-the-deadly-poppy-field",
+   "duration": 638.13,
+   "coverage": 0.935,
+   "words": 1956
+  },
+  {
+   "n": 9,
+   "title": "The Queen of the Field Mice",
+   "slug": "9-the-queen-of-the-field-mice",
+   "duration": 493.54,
+   "coverage": 0.915,
+   "words": 1391
+  },
+  {
+   "n": 10,
+   "title": "The Guardian of the Gates",
+   "slug": "10-the-guardian-of-the-gates",
+   "duration": 659.01,
+   "coverage": 0.931,
+   "words": 2051
+  },
+  {
+   "n": 11,
+   "title": "The Wonderful Emerald City of Oz",
+   "slug": "11-the-wonderful-emerald-city-of-oz",
+   "duration": 1230.11,
+   "coverage": 0.963,
+   "words": 3605
+  },
+  {
+   "n": 12,
+   "title": "The Search for the Wicked Witch",
+   "slug": "12-the-search-for-the-wicked-witch",
+   "duration": 1222.14,
+   "coverage": 0.954,
+   "words": 3742
+  },
+  {
+   "n": 13,
+   "title": "How the Four were Reunited",
+   "slug": "13-how-the-four-were-reunited",
+   "duration": 407.5,
+   "coverage": 0.942,
+   "words": 1347
+  },
+  {
+   "n": 14,
+   "title": "The Winged Monkeys",
+   "slug": "14-the-winged-monkeys",
+   "duration": 637.9,
+   "coverage": 0.92,
+   "words": 1909
+  },
+  {
+   "n": 15,
+   "title": "The Discovery of Oz the Terrible",
+   "slug": "15-the-discovery-of-oz-the-terrible",
+   "duration": 966.08,
+   "coverage": 0.944,
+   "words": 2756
+  },
+  {
+   "n": 16,
+   "title": "The Magic Art of the Great Humbug",
+   "slug": "16-the-magic-art-of-the-great-humbug",
+   "duration": 343.23,
+   "coverage": 0.961,
+   "words": 921
+  },
+  {
+   "n": 17,
+   "title": "How the Balloon was Launched",
+   "slug": "17-how-the-balloon-was-launched",
+   "duration": 404.26,
+   "coverage": 0.967,
+   "words": 1154
+  },
+  {
+   "n": 18,
+   "title": "Away to the South",
+   "slug": "18-away-to-the-south",
+   "duration": 430.32,
+   "coverage": 0.927,
+   "words": 1165
+  },
+  {
+   "n": 19,
+   "title": "Attacked by the Fighting Trees",
+   "slug": "19-attacked-by-the-fighting-trees",
+   "duration": 361.75,
+   "coverage": 0.966,
+   "words": 1011
+  },
+  {
+   "n": 20,
+   "title": "The Dainty China Country",
+   "slug": "20-the-dainty-china-country",
+   "duration": 550.57,
+   "coverage": 0.946,
+   "words": 1499
+  },
+  {
+   "n": 21,
+   "title": "The Lion Becomes the King of Beasts",
+   "slug": "21-the-lion-becomes-the-king-of-beasts",
+   "duration": 337.33,
+   "coverage": 0.938,
+   "words": 928
+  },
+  {
+   "n": 22,
+   "title": "The Country of the Quadlings",
+   "slug": "22-the-country-of-the-quadlings",
+   "duration": 341.15,
+   "coverage": 0.934,
+   "words": 987
+  },
+  {
+   "n": 23,
+   "title": "The Good Witch grants Dorothy's Wish",
+   "slug": "23-the-good-witch-grants-dorothys-wish",
+   "duration": 443.57,
+   "coverage": 0.945,
+   "words": 1271
+  },
+  {
+   "n": 24,
+   "title": "Home Again",
+   "slug": "24-home-again",
+   "duration": 53.39,
+   "coverage": 0.955,
+   "words": 74
+  }
+ ],
+ "cover": null
+}
