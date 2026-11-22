@@ -83,11 +83,12 @@ try {
     // real playback from the Internet Archive for a few seconds
     const first = info.books[0];
     await page.goto(`${base}${first.first}`, 400);
-    await page.eval(`document.getElementById("play").click()`);
+    // start at the 100th word (recordings open with LibriVox's spoken introduction) by tapping it, as a reader would
+    const start = await page.eval(`(() => { const w = document.querySelectorAll("#text .w")[100]; w.click(); return JSON.parse(document.getElementById("times").textContent)[100] / 100; })()`);
     try {
-      await page.waitFor(`document.getElementById("audio").currentTime > 3`, 45000);
+      await page.waitFor(`document.getElementById("audio").currentTime > ${start + 3}`, 45000);
       const r = await page.eval(`({ t: document.getElementById("audio").currentTime, cur: window.__readalong.current() })`);
-      check(r.cur >= 0, `live playback from the Internet Archive: ${r.t.toFixed(1)} s played, highlight at word ${r.cur}`);
+      check(r.cur >= 100, `live playback from the Internet Archive: playing at ${r.t.toFixed(1)} s, highlight at word ${r.cur}`);
     } catch (e) { problems.push("live playback did not start within 45 s: " + e.message); }
     await page.eval(`document.getElementById("audio").pause()`);
     privacy(page, "live playback");
