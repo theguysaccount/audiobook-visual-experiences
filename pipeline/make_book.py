@@ -173,6 +173,15 @@ def make(entry, reuse=False, model_name="base.en"):
         return {"ok": False, "reason": problem}
     blocks = parse_blocks(raw)
     bw = book_words(blocks)
+    # A cover and an illustrator credit when the queue entry doesn't name them: the edition's own cover image (or
+    # its first illustration) and the "Illustrator:" line of the Gutenberg header.
+    if not entry.get("cover"):
+        imgs = [b["src"] for b in blocks if b["k"] == "img"]
+        entry = {**entry, "cover": next((x for x in imgs if "cover" in x.lower()), imgs[0] if imgs else None)}
+    if not entry.get("illustrator"):
+        m = re.search(r"Illustrator:\s*([^<\n]{3,80})", raw)
+        if m:
+            entry = {**entry, "illustrator": m.group(1).strip()}
     index = BookIndex([n for _, _, n in bw])
     workdir = tempfile.mkdtemp(prefix="readalong-")
     try:

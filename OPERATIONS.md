@@ -16,7 +16,7 @@ that moves the site; see key 1.
 | Weekly self-test | `.github/workflows/selftest.yml` | **Tuesdays 10:47 UTC**; by hand | the browser self-test **against the live site, including a few seconds of real playback from the Internet Archive**; every page, file and audio file; a staleness check that dispatches the monthly book job if the newest book is over 40 days old and books remain queued | Never changes the site. Opens or updates one `site-health` issue on failure; closes it on recovery. |
 | Keep-alive | `.github/scripts/keepalive.sh`, in both scheduled workflows | every scheduled run | re-enables workflows GitHub disabled for inactivity (never ones disabled by hand); empty commit if the last commit is 45+ days old | Pushes with `GITHUB_TOKEN` trigger no workflows, so it cannot loop. |
 
-The queue holds 14 books (two published at launch): about a year of monthly additions. Every job is safe to
+The queue holds 14 books (three published on launch day; the third, Oz, by the monthly job itself): about a year of monthly additions. Every job is safe to
 re-run: the book job skips books already published, and re-making a book reuses its saved transcripts.
 
 ## What to watch

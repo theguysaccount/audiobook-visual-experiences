@@ -57,6 +57,8 @@ jobs:
           if [ "$code" = "3" ]; then echo "::warning::The book did not pass a content check and was not published; the reason is saved in data/queue.json."; exit 0; fi
           exit $code
         continue-on-error: true
+      - name: Share card for the new book
+        run: node scripts/og.mjs || echo "::warning::Share card not drawn; the site's own card is used"
       - name: Tests on the new data
         run: npm test
       - name: Build check
@@ -65,7 +67,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/books data/queue.json
+          git add data/books data/queue.json src/og
           if git diff --cached --quiet; then echo "Nothing new."; else
             git commit -m "Monthly book: $(git diff --cached --name-only | grep -m1 -o 'data/books/[^/]*' | cut -d/ -f3 || echo queue update) ($(date -u +%F))"
             git pull --rebase --quiet origin main && git push origin HEAD:main

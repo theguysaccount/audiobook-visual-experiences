@@ -28,6 +28,6 @@ r/audiobooks, LibriVox's own forum (they like hearing how recordings are used). 
 
 ## 14-day calendar (machine)
 
-- Day 0: deploy with Alice and A Christmas Carol; IndexNow for every page; host-root rebuild.
+- Day 0: deploy with Alice, A Christmas Carol and The Wonderful Wizard of Oz; IndexNow for every page; host-root rebuild.
 - Weekly: live self-test with playback.
-- Day 9 of each month: next book from the queue (December: The Wonderful Wizard of Oz).
+- Day 9 of each month: next book from the queue (December: Through the Looking-Glass).

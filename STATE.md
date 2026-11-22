@@ -5,7 +5,8 @@
   pages with the original illustrations; a static site with a read-along player, embeds, open data; monthly,
   weekly and deploy workflows.
 - Published at launch: Alice's Adventures in Wonderland (Eric Leach; Rackham illustrations; 95% of words matched)
-  and A Christmas Carol (Kara Shallenberg; Leech illustrations). 12 more books queued.
+  and A Christmas Carol (Kara Shallenberg; Leech illustrations; 96%), made locally; The Wonderful Wizard of Oz
+  (Lyn Stanley; Denslow illustrations; 94%), made by the monthly job in Actions as its first proof. 11 more queued.
 - Verified: unit tests for the parser, aligner, rights and player logic; build tests; a headless-Chrome test of
   sync, seeking, illustrations, embeds and phone layout; live playback from the Internet Archive.
 - Known limits: timing is word-level from a small recognition model (occasional drift of a fraction of a second

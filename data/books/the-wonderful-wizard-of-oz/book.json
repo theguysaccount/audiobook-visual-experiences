@@ -3,7 +3,7 @@
  "title": "The Wonderful Wizard of Oz",
  "author": "L. Frank Baum",
  "published": 1900,
- "illustrator": null,
+ "illustrator": "W. W. Denslow (1900)",
  "blurb": "A cyclone carries Dorothy to the land of Oz, where she sets off along the yellow brick road to find the Wizard.",
  "readers": [
   "Lyn Stanley"
@@ -216,5 +216,5 @@
    "words": 74
   }
  ],
- "cover": null
+ "cover": "img/i001_edit.jpg"
 }

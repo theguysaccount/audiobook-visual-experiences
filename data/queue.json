@@ -33,7 +33,9 @@
    "published": 1900,
    "lv": 12181,
    "pg": 43936,
-   "blurb": "A cyclone carries Dorothy to the land of Oz, where she sets off along the yellow brick road to find the Wizard."
+   "blurb": "A cyclone carries Dorothy to the land of Oz, where she sets off along the yellow brick road to find the Wizard.",
+   "cover": "images/i001_edit.jpg",
+   "illustrator": "W. W. Denslow (1900)"
   },
   {
    "slug": "through-the-looking-glass",
